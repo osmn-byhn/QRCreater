@@ -17,7 +17,6 @@
       console.log(dataUrl);
       console.log(res.data)
       codeUrl.value = `data:image/png;base64, ${res.data}`
-      //deneme.value = codeUrl._value
 
     })
     
@@ -29,38 +28,26 @@
 
 <template>
   
-  <div class="container-fluid">
-    <div class="text-center">
-      <img :src="codeUrl">
+  <div class="main">
+    <div class="url">
+      <div class="textBox">
+        <input type="text"  v-model="dataUrl" class="" id="content" placeholder="Enter content">
+      </div>
+      <div class="generate"> 
+        <button type="button" class="" id="generate" @click="getQR()">
+          <i class="bi bi-qr-code-scan"></i>
+        </button>
+      </div>
     </div>
-
-    <div class="form-horizontal">
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="content">Content:</label>
-        <div class="col-sm-10">
-          <input type="text"  v-model="dataUrl" class="form-control" id="content" placeholder="Enter content">
-        </div>
-        <p>{{ dataUrl }}</p>
-      </div>
-      <div class="form-group"> 
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="button" class="btn btn-default" id="generate" @click="getQR()">Generate</button>
-        </div>
-      </div>
+    <div class="qrBox">
+      <img :src="codeUrl">
+      <a :href="codeUrl" download>Download </a>
+      
     </div>
   </div>
-
-  
-
-
-
   <RouterView />
 </template>
 
-<style scoped>
-  #qrcode {
-    width: 256px;
-    height: 256px;
-    margin-top:15px;
-  }
+<style scoped lang="scss">
+  @import '../public/App.scss'
 </style>
