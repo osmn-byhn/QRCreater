@@ -1,11 +1,13 @@
 .main {
     width: 50%;
-    margin-left: 30%;
-    margin-top: 30vh;
+    margin-top: 20vh;
+    position: relative;
+    margin-left: 35%;
     .url {
         display: flex;
         .textBox {
             width: 100%;
+            //margin-left: 20%;
             input {
                 height: 35px;
                 width: 70%;
@@ -29,6 +31,26 @@
                     background-color: purple;
                 }
             }
+        }
+        
+    }
+    .qrBox {
+        margin-top: 10vh;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        padding-left: 20%;
+        background: black;
+        border-radius: 10px;
+        width: 40%;
+        a {
+            display: block;
+            margin-top: 5%;
+            color: white;
+            background-color: #202124;
+            padding: 5%;
+            padding-left: 15%;
+            width: 35%;
+            text-decoration: none;
         }
     }
 }

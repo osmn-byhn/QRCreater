@@ -24,11 +24,19 @@
       console.log(err)
   })
   }
+   VanillaTilt.init(document.querySelectorAll(".main"), {
+		max: 25,
+        speed: 400,
+        easing:"cubic-bezier(.03,.98,.52,.99)",
+        perspective:500,
+        transition:true
+    });
 </script>
 
 <template>
   
   <div class="main">
+    <h1>Generate QRCode for anything</h1>
     <div class="url">
       <div class="textBox">
         <input type="text"  v-model="dataUrl" class="" id="content" placeholder="Enter content">
@@ -41,7 +49,10 @@
     </div>
     <div class="qrBox">
       <img :src="codeUrl">
-      <a :href="codeUrl" download>Download </a>
+      <a :href="codeUrl" download>
+        Download 
+        <i class="bi bi-arrow-down-circle-fill"></i>
+      </a>
       
     </div>
   </div>
