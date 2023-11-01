@@ -35,28 +35,27 @@
 
 <template>
   
-  <div class="main">
+  <div class="main container">
     <h1>Generate QRCode for anything</h1>
-    <div class="url">
-      <div class="textBox">
-        <input type="text"  v-model="dataUrl" class="" id="content" placeholder="Enter content">
-      </div>
-      <div class="generate"> 
-        <button type="button" class="" id="generate" @click="getQR()">
+    <br>
+    <div class="input-group mb-3">
+      <input type="text" v-model="dataUrl" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button type="button" class="btn btn-primary" id="generate" @click="getQR()">
           <i class="bi bi-qr-code-scan"></i>
         </button>
-      </div>
     </div>
+
+    
     <div class="qrBox">
       <img :src="codeUrl">
-      <a :href="codeUrl" download>
+     
+    </div>
+    <br>
+    <a :href="codeUrl" download class=" btn btn-success col-12">
         Download 
         <i class="bi bi-arrow-down-circle-fill"></i>
       </a>
-      
-    </div>
   </div>
-  <RouterView />
 </template>
 
 <style scoped lang="scss">
